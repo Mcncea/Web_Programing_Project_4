@@ -1,3 +1,5 @@
+
+<!DOCTYPE html>
 <?php
 include("common.php");
 session_start();
@@ -26,26 +28,20 @@ session_start();
 		$_SESSION['loggedIn'] = true;
 		$_SESSION['username'] = $_POST['username'];
 		echo 'User successfully created!';
-		header('Location: index.php');
+		header('Location: login.php');
 	}
 	
 	$conn->close();
 ?>
-<!DOCTYPE html>
 <html>
 	<head>
 		<link rel="stylesheet" href="./stylesheet.css">
 		<meta charset="utf-8">
 		<title>Register</title>
+		<script type="application/javascript">
+		//window.location.replace("login.php");
+		</script>
 	</head>
 	<body>
-	<center>
-		<div>
-			<h1>Registration Successful</h1>
-			<a href="buyerdash.php">Go to buyer dashboard</a><br>
-			<a href="sellerdash.php">Go to seller dashboard</a><br>
-			<a href="admindash.php">Go to admin dashboard</a><br>
-		</div>
-	</center>
 	</body>
 </html>
