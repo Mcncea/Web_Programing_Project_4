@@ -1,5 +1,5 @@
 <?php
-include("create.php");
+include("common.php");
 session_start();
 
 	if (!isset($_POST['username'], $_POST['password'])) {
