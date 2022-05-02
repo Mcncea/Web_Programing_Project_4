@@ -40,7 +40,7 @@ $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
+$fileExists = false;
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
   $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
@@ -57,6 +57,7 @@ if(isset($_POST["submit"])) {
 if (file_exists($target_file)) {
   echo "Sorry, file already exists.";
   $uploadOk = 0;
+  $fileExists = true;
 }
 
 // Check file size
@@ -87,11 +88,13 @@ if ($uploadOk == 0) {
 	$image = "uploads/placeholder_icon.png";
   }
 }
+if ($fileExists == true) {
+	$image = $target_file;
+}
 
 // End modified code from https://www.w3schools.com/php/php_file_upload.asp
 
-// write the sql query in php file to Insert the data into the table
-
+// Insert the data
 $conn = sql_connect();
 
 $sql = "INSERT INTO properties (OwnerID, image, location, price, floorplan, age, bedrooms, facilities, garden, parking, proximity, tax) 

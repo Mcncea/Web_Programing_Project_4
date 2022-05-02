@@ -10,7 +10,7 @@
 	</head>
 	<body>
 	<center>
-		<div>
+		<div class="form">
 			<h1>Register</h1>
 			<form action="addRegisteredUser.php" method="post">
 				<br><br>
@@ -34,7 +34,8 @@
 				<input type="password" name="passwd" placeholder="Password" id="pw" required>
 				</label>
 				<br><br>
-				<input type="submit" value="Register">
+				<input class="buttons" type="submit" value="Register">
+				<br><br>
 			</form>
 			<a href='login.php'>Alread registered? Log in</a>
 		</div>

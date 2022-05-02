@@ -12,8 +12,8 @@
 	</head>
 	<body>
 	<center>
-		<div>
-			<h1>Login</h1>
+		<div class="form">
+			<h1>LOGIN</h1>
 			<h6 id='failed'></h6>
 			<form action="loginSuccess.php" method="post">
 				<br><br>
@@ -25,10 +25,10 @@
 				<input type="password" name="passwd" placeholder="Password" id="pw" required>
 				</label>
 				<br><br>
-				<input type="submit" value="Login">
+				<input class="buttons" type="submit" value="Login"><br><br>
 			</form>
 			<br><br>
-			<a href='register.php'>Create new account</a>
+			Don't have an account?<a href='register.php'>Create new account</a>
 		</div>
 	</center>
 	</body>
