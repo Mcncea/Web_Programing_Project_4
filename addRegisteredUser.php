@@ -3,7 +3,7 @@
 <?php
 include("common.php");
 session_start();
-// $_SESSION['passwd'] = $_POST['passwd'];
+$_SESSION['passwd'] = $_POST['passwd'];
 	if (!isset($_POST['username'], $_POST['passwd'], $_POST['email'], $_POST['fname'], $_POST['lname'])) {
 		exit('Please fill the form to complete registration');
 	}
@@ -39,7 +39,7 @@ session_start();
 		<meta charset="utf-8">
 		<title>Register</title>
 		<script type="application/javascript">
-		//window.location.replace("login.php");
+		window.location.replace("login.php");
 		</script>
 	</head>
 	<body>

@@ -1,7 +1,7 @@
 <?php 
 	session_start();
-	// if (isset($_SESSION['passwd']))
-	// echo 'Password: ' .$_SESSION['passwd'];
+	if (isset($_SESSION['passwd']))
+	echo 'Password: ' .$_SESSION['passwd'];
 ?>
 <!DOCTYPE html>
 <html>
