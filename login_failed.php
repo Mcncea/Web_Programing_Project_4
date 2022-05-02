@@ -1,7 +1,7 @@
+<!DOCTYPE html>
 <?php 
 	session_start();
 ?>
-<!DOCTYPE html>
 <html>
 	<head>
 		<link rel="stylesheet" href="style.css">
@@ -12,6 +12,7 @@
 	<center>
 		<div class = "form">
 			<h1>LOGIN</h1>
+      <h6 class='failed'>Username or password was wrong, Please try again</h6>
 			<form action="login.php" method="post">
 				<br><br>
 				<input type="text" name="username" placeholder="Username" id="username" required>
