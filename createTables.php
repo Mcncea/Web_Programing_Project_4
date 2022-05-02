@@ -33,9 +33,10 @@ if ($conn->query($sql) === TRUE) {
 $sql = "CREATE TABLE properties (
 	OwnerID INT(6),
 	PropertyID INT(6) AUTO_INCREMENT PRIMARY KEY,
+	image VARCHAR(100),
 	location VARCHAR(50),
 	price INT(10),
-	floorplan VARCHAR(50),
+	floorplan VARCHAR(255),
 	age INT(3),
 	bedrooms INT(2),
 	facilities VARCHAR(255),
