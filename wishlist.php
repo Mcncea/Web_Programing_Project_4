@@ -8,15 +8,16 @@
 	<head>
 		<link rel="stylesheet" href="./stylesheet.css">
 		<meta charset="utf-8">
-		<title>Registered Properties</title>
+		<title>Wish List</title>
 	</head>
 	<body>
-	<a href="addProperty.php"><button class="add-property">+</button></a>
+	<a href="buyerdash.php"><button class="buttons">Back to buyers' dashboard</button></a>
 	<div class="properties-list">
 		<?php
 			$conn = sql_connect();
 			createTables($conn);
-			$sql = "SELECT * FROM properties WHERE OwnerID = ".$_SESSION['userID']."";
+			$sql = "SELECT * FROM properties INNER JOIN wishlist ON properties.PropertyID = wishlist.PropertyID 
+			WHERE ListID = ".$_SESSION['userID']."";
 			$result = $conn->query($sql);
 			if($result->num_rows > 0) {
 				
@@ -54,7 +55,7 @@
 				 
 			}
 			else {
-				echo 'No properties registered! Add your first one by clicking the +';
+				echo 'No properties in the list';
 			}
 			
 			$conn->close();

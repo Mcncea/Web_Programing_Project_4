@@ -53,5 +53,18 @@ if ($conn->query($sql) === TRUE) {
 	echo "Error creating table: " . $conn->error;
 }
 
+// Properties table
+$sql = "CREATE TABLE wishlist (
+	ListID INT(6),
+	PropertyID INT(6)
+	)";
+$conn->query($sql);
+
+if ($conn->query($sql) === TRUE) {
+	echo "Table wishlist created successfully";
+} else {
+	echo "Error creating table: " . $conn->error;
+}
+
 $conn->close();
 ?>  

@@ -9,10 +9,9 @@
 		<link rel="stylesheet" href="./stylesheet.css">
 		<meta charset="utf-8">
 		<title>Registered Properties</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<script>
 		// Begin modified code from https://www.w3schools.com/js/js_ajax_database.asp
-		function showCustomer(str) {
+		function showProperties(str) {
 		  if (str == "") {
 			document.getElementById("properties").innerHTML = "";
 			return;
@@ -23,14 +22,27 @@
 		  }
 		  xhttp.open("GET", "showProperties.php?q="+str);
 		  xhttp.send();
+		  
+		  const buttons = document.getElementsByClassName("wish-button");
+		  for (var i = 0; i < buttons.length; i++) {
+			  buttons[i].setAtribute('onmousedown', 'function() { buttons[i].innerHTML = "Added"; alert("Added new property to wish list"); }');
+		  }
 		}
 		// End modified code from https://www.w3schools.com/js/js_ajax_database.asp
+		
+		function addToWishList(ID) {
+			const xhttp = new XMLHttpRequest();
+			xhttp.open("GET", "addToWishList.php?q="+ID);
+			xhttp.send();
+		}
+		
 		</script>
 	</head>
 	<body>
 	<form>
 	Search for properties: <input type="text" id="search" onkeyup="showProperties(this.value)">
 	</form>
+	<a href="wishlist.php"><button>Go to wishlist</button></a>
 	<div id="properties"></div>
 	</body>
 </html>
