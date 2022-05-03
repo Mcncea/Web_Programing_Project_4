@@ -34,7 +34,7 @@
 	$sql .= addClause("parking", $query_string) . "OR ";
 	$sql .= addClause("proximity", $query_string);
 	
-	echo $sql;
+	//echo $sql;
 	$result = $conn->query($sql);
 	
 	if($result->num_rows > 0) {

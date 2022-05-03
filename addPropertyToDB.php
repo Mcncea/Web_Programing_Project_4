@@ -61,7 +61,7 @@ if (file_exists($target_file)) {
 }
 
 // Check file size
-if ($_FILES["fileToUpload"]["size"] > 900000) {
+if ($_FILES["fileToUpload"]["size"] > 9000000) {
   //echo "Sorry, your file is too large.";
   $uploadOk = 0;
 }
@@ -98,8 +98,8 @@ if ($fileExists == true) {
 $conn = sql_connect();
 
 $sql = "INSERT INTO properties (OwnerID, image, location, price, floorplan, age, bedrooms, facilities, garden, parking, proximity, tax) 
-	VALUES ('".$owner."', '".$image."', '".$location."', '".$price."', '".$floorplans."', '".$age."', '".$bedrooms."', '".$facilities."', ".$garden.", '".$parking."', '".$proximity."', '".$tax."')";
-
+	VALUES ('".$owner."', '".$image."', '".$location."', '".$price."', '".$floorplan."', '".$age."', '".$bedrooms."', '".$facilities."', ".$garden.", '".$parking."', '".$proximity."', '".$tax."')";
+echo $floorplan;
 if ($conn->query($sql) === TRUE) {
     //echo "New data successfully saved";
 } else {
@@ -113,6 +113,7 @@ $conn->close();
 <html>
 
 <head lang="en">
+<link rel="stylesheet" href="table.css">
 	<meta charset="UTF-8">
 	<title>Adding Property to DB</title>
 </head>
@@ -129,8 +130,8 @@ $conn->close();
 	echo "<p> Property uploaded! Go back to seller dashboard to see it </p>"; 
 	?>
 	<!-- Redirect the user to show the data -->
-	<?php echo "<img src='".$image."'>"; ?>
-	<a href="sellerdash.php"><input type="button" id="btn1" value="OK"></a>
+	<?php echo "<center><img src='".$image."'></center>"; ?>
+	<a href="sellerdash.php"><input class = "buttons" type="button" id="btn1" value="OK"></a>
 	</div>
 </body>
 

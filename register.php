@@ -37,7 +37,8 @@
 				<input class="buttons" type="submit" value="Register">
 				<br><br>
 			</form>
-			<a href='login.php'>Alread registered? Log in</a>
+			<br><br>
+			Alread registered? <a href='login.php'> Log in</a>
 		</div>
 	</center>
 	</body>

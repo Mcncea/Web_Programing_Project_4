@@ -6,13 +6,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="./stylesheet.css">
+		<link rel="stylesheet" href="wishlist.css">
 		<meta charset="utf-8">
 		<title>Registered Properties</title>
 	</head>
 	<body>
-	<a href="addProperty.php"><button class="add-property">+</button></a>
-	<a href="index.php">Go back to main menu</a><br>
+	<center><a href="addProperty.php"><button class="add-property">Add a new property</button></a><center><br>
+	<center><a href="index.php"><button class="add-property">Go back to main menu</button></a><center><br>
 	<div class="properties-list">
 		<?php
 			$conn = sql_connect();
@@ -27,7 +27,7 @@
 					echo "<div class='property'>";
 					echo "<img class='property-img' src='".$row["image"]."'>";
 					echo "<table><tr><th>Location</th>
-						<tr><th>Price</th>
+						<th>Price</th>
 						<th>Floor Plan</th>
 						<th>Age</th>
 						<th>Bedrooms</th>
@@ -38,7 +38,7 @@
 						<th>Tax</th></tr>";
 					echo "<tr><td>".$row["location"]."</td>
 						<td>".$row["price"]."</td>
-						<td>".$row["floorplans"]."</td>
+						<td>".$row["floorplan"]."</td>
 						<td>".$row["age"]."</td>
 						<td>".$row["bedrooms"]."</td>
 						<td>".$row["facilities"]."</td>

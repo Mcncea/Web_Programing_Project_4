@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="./stylesheet.css">
+		<link rel="stylesheet" href="wishlist.css">
 		<meta charset="utf-8">
 		<title>Browse Properties</title>
 		<script>
@@ -39,11 +39,15 @@
 		</script>
 	</head>
 	<body>
+	<center>
 	<form>
-	Search for properties: <input type="text" id="search" onkeyup="showProperties(this.value)">
+	 Search for properties: <input type="text" id="search" placeholder = "What are you looking for?" onkeyup="showProperties(this.value)">
 	</form>
 	<a href="wishlist.php"><button>Go to wishlist</button></a>
-	<a href="index.php">Go back to main menu</a><br>
+	<a href="index.php"><button>Go back to main menu</button></a><br>
+	</center>
+
+	
 	<div id="properties"></div>
 	</body>
 </html>

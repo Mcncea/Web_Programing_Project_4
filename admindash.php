@@ -10,16 +10,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="./stylesheet.css">
+		<link rel="stylesheet" href="style.css">
 		<meta charset="utf-8">
 		<title>Admin Info</title>
 	</head>
 	<body>
 	<center>
 		<div>
-			<h1>Top Secret Admin Zone</h1>
-			<h2>Welcome Home Master</h2>
-			<a href="index.php">Go back to main menu</a><br>
+			<h1>TOP SECRET ADMIN ZONE</h1>
+			<img src="uploads/butler.png" width="200px" height="200px" style="border: 3px solid black">
+			<h2>Welcome Home Master~~~</h2>
+			<a class = "buttons" href="index.php">Go back to main menu</a><br>
 			<div class="stats" id="top-seller">
 				<table class="stats-table">
 				<caption>Users in order of most properties listed</caption>
@@ -38,13 +39,14 @@
 					}
 				?>
 				</table>
+				
 			</div>
 			
 			<div class="stats" id="top-wishlisted">
 				<table class="stats-table">
 				<caption>Most wishlisted properties</caption>
 				<tr>
-					<th>Property</th><th>Location</th><th>Times wishlisted</th>
+					<th>Property ID</th><th>Location</th><th>Times wishlisted</th>
 				</tr>
 				<?php
 					$sql = "SELECT properties.PropertyID, properties.location, COUNT(properties.PropertyID) AS WishFrequency
@@ -65,7 +67,7 @@
 				<table class="stats-table">
 				<caption>Most expensive properties (Uh Oh)</caption>
 				<tr>
-					<th>Property</th><th>Location</th><th>Price Point</th>
+					<th>Property ID</th><th>Location</th><th>Price Point</th>
 				</tr>
 				<?php
 					$sql = "SELECT * FROM properties ORDER BY price DESC";
@@ -80,9 +82,7 @@
 				</table>
 			</div>
 			
-			<div class="stats" id="common-location">
 			
-			</div>
 		</div>
 	</center>
 	</body>
