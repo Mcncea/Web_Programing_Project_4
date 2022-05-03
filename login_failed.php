@@ -1,9 +1,9 @@
+<!DOCTYPE html>
 <?php 
 	session_start();
 	// if (isset($_SESSION['passwd']))
 	// echo 'Password: ' .$_SESSION['passwd'];
 ?>
-<!DOCTYPE html>
 <html>
 	<head>
 		<link rel="stylesheet" href="./stylesheet.css">
